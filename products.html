@@ -3,26 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products page</title>
+    <title>Products Page</title>
     <link rel="stylesheet" href="/CSS/product.css">
 </head>
 <body>
-    <!-----products start here----->
+    <div class="container">
+        <!-- Navbar (reuse from index.html) -->
+        <div class="navbar"> 
+            <div class="toggle-button-and-logo">
+                <div class="toggle-button" onclick="toggleMenu()">☰</div>
+                <div class="logo">
+                    <img src="images/logo.png" alt="LOGO" width="125px">
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/products.html">PRODUCT</a></li>
+                    <li><a href="/About.html">ABOUT</a></li>
+                    <li><a href="/Contactus.html">CONTACT</a></li>
+                    <li><a href="/Account.html">ACCOUNT</a></li>
+                </ul>
+            </nav>
+        </div>
 
-<!-----kindly write the code here and for css go to css folder and products file is maintained there make sure to follow the color theme-->
+        <!-- Product Showcase -->
+        <div class="products-section">
+            <h1>Explore Our Latest Products</h1>
+            <div class="slider-container">
+                <!-- Left Arrow -->
+                <button class="slider-btn left" id="slideLeft"><</button>
 
+                <!-- Product Slider -->
+                <div class="product-slider" id="productSlider">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <img src="images/product-1.jpg" alt="Product 1">
+                        <h3>Product Name 1</h3>
+                        <p>$49.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                        <img src="images/product-2.jpg" alt="Product 2">
+                        <h3>Product Name 2</h3>
+                        <p>$59.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <img src="images/product-3.jpg" alt="Product 3">
+                        <h3>Product Name 3</h3>
+                        <p>$69.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="product-card">
+                        <img src="images/product-4.jpg" alt="Product 4">
+                        <h3>Product Name 4</h3>
+                        <p>$79.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                    <!-- Add more product cards as needed -->
+                    <div class="product-card">
+                        <img src="images/product-5.jpg" alt="Product 5">
+                        <h3>Product Name 5</h3>
+                        <p>$89.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product-6.jpg" alt="Product 6">
+                        <h3>Product Name 6</h3>
+                        <p>$99.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
 
-    <!------product ends here -->
+                <!-- Right Arrow -->
+                <button class="slider-btn right" id="slideRight">></button>
+            </div>
+        </div>
 
+        <!-- Pagination (Optional) -->
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">&raquo;</a>
+        </div>
 
+    </div>
 
+    <!-- Footer (reuse from index.html) -->
+    <div class="footer">
+        <div class="container">
+            <!-- Footer content here -->
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>&copy; 2024 All Rights Reserved</p>
+        </div>
+    </div>
 
-    <!---Footer starts -->
+    <!-- JavaScript to enable smooth scrolling -->
+    <script>
+        const slider = document.getElementById('productSlider');
+        const slideLeft = document.getElementById('slideLeft');
+        const slideRight = document.getElementById('slideRight');
 
+        slideLeft.onclick = function() {
+            slider.scrollBy({
+                left: -300, // Adjust scroll distance
+                behavior: 'smooth'
+            });
+        }
 
-
-
-
-<!----Footer ends---->
+        slideRight.onclick = function() {
+            slider.scrollBy({
+                left: 300, // Adjust scroll distance
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
